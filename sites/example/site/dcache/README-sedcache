@@ -1,0 +1,43 @@
+List of variables that can be set and used
+
+1. Postgresql:
+in glite/se_dcache/pgsql/rpms
+PGDG_ARCH
+DCACHE_PGDG_VERSION
+
+glite/se_dcache/pgsql/service
+DCACHE_PGSQL_CONFIG_SITE
+
+2. dCache:
+glite/se_dcache/dcache/rpms
+DCACHE_JDK_VERSION
+DCACHE_JDK_ARCH
+DCACHE_CORE_VERSION
+DCACHE_CORE_ARCH
+DCACHE_CLIENT_VERSION
+DCACHE_CLIENT_ARCH
+DCACHE_PNFS_PGSQL_VERSION
+DCACHE_PNFS_PGSQL_ARCH
+DCACHE_PGDG_PNFS_VERSION
+DCACHE_PGDG_PNFS_ARCH
+
+glite/se_dcache/dcache/service
+DCACHE_NODE_TYPE
+DOOR_GSIDCAP
+DOOR_GRIDFTP
+DOOR_SRM
+DOOR_DCAP
+DOOR_XROOTD
+DCACHE_LOG_DIR
+DCACHE_CATALINA_VERSION
+
+glite/se_dcache/dcache/config
+SE_DCACHE
+SERVER_ID
+DCACHE_JAVA_HOME
+DCACHE_SITE_NS
+
+glite/se_dcache/dcache/node_config
+NODE_CF
+NOT_AN_ADMIN_NODE
+

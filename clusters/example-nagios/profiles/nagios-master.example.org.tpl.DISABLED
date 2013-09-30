@@ -1,0 +1,25 @@
+############################################################
+#
+# OBJECT template nagios-master.example.org
+#
+# Example object template for a master Nagios monitoring host
+#
+# Contributed by: Ronald Starink    < ronalds AT nikhef DOT nl >
+#
+############################################################
+
+object template nagios-master.example.org;
+
+## Grid monitoring is disabled because QWG does not (yet) support Yaim
+## variable NAGIOS_GRID_MONITORING ?= 'monitoring/nagios/grid/server';
+
+# point to the master template that combines hosts/services/... 
+# from example clusters A and B
+variable NAGIOS_CONFIG_SITE = 'site/nagios/master';
+
+include { 'machine-types/nagios' };
+
+#
+# software repositories (should be last)
+#
+include { PKG_REPOSITORY_CONFIG };

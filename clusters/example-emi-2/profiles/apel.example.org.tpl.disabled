@@ -1,0 +1,16 @@
+
+object template apel.example.org;
+
+variable APEL_MYSQL_ADMINPWD ?= 'Ap&lmgere';
+#
+# Configure as a ApelBox
+#
+include { 'machine-types/apel' };
+
+#
+# software repositories (should be last)
+#
+include { PKG_REPOSITORY_CONFIG };
+
+
+

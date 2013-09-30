@@ -1,0 +1,24 @@
+############################################################
+#
+# OBJECT template nagios-slave-B.example.org
+#
+# Example object template for a slave Nagios monitoring host
+#
+# Contributed by: Ronald Starink    < ronalds AT nikhef DOT nl >
+#
+############################################################
+
+object template nagios-slave-B.example.org;
+
+# point to the slave template that includes hosts/services/... 
+# from example cluster B 
+variable NAGIOS_CONFIG_SITE = 'site/nagios/slave-B';
+
+include { 'machine-types/nagios' };
+
+#
+# software repositories (should be last)
+#
+include { PKG_REPOSITORY_CONFIG };
+
+

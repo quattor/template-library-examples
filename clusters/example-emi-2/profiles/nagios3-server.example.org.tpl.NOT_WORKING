@@ -1,0 +1,69 @@
+#Server Nagios: template quattor for nagios3
+############################
+
+object template nagios3-server.example.org;
+
+############
+#Fonctionnalite UI utile pour nagios service grille
+variable VOS ?= list('grif','dteam');
+include { 'machine-types/ui' };
+############
+
+#include Nagios server 
+##############################
+##What resources are monitored
+variable SITES = list('dapnia');
+include { 'config/nodes_properties' };
+
+##############################
+###Configuration, setting variables
+variable NAGIOS_NCG_CONFIG = true;
+variable NAGIOS_NOTIFICATIONS_ENABLED = false;
+variable NAGIOS_NODES_PROPERTIES   = NODES_PROPS;
+variable NAGIOS_DEFAULT_ADMIN_NAME = "dapnia";
+variable NAGIOS_IGNORED_NODES = list("node09.org.fr","node19.org.fr","node22.org.fr");
+variable NAGIOS_MONITORED_HOSTGROUPS = list("WN","NFS","SEDPM","SE_DISK","SITE_BDII","MON","LFC","CE","CE-MPI","VOBOX","UI","WMS");
+variable NAGIOS_ADMIN_CONTACTS= nlist(
+	"admin1"	,"admin1@org.fr",
+	"admin2" 	,"admin2@org.fr"
+	);
+variable NAGIOS_HTPASSWD_LOGIN ?= "me";
+variable NAGIOS_HTPASSWD_PASS  ?= 'xxxxx';
+###################
+variable NAGIOS_MODE_PROXY_RENEW = false;
+variable NAGIOS_MODE_PROXY_RETRIEVE = true;
+##############################
+###setting variables for proxy Renewal
+variable NAGIOS_RENEW_PROXY = "/opt/vobox/vo.grif.fr/proxy_repository/xxxxxx";
+variable NAGIOS_OUTPUT_PROXY = "/etc/nagios/globus/userproxy.pem";
+variable NAGIOS_VONAME_PROXY = "vo.grif.fr";
+
+##############################
+###setting variables for proxy Retrieval
+variable NAGIOS_MYPROXY_NAME = "mynagios";
+variable MYPROXY_SERVER = "myproxy.org.fr";
+##############################
+###Functions used to configure services and hosts
+include { 'monitoring/nagios3/server/functions' };
+
+##############################
+###Services configuration
+variable TMP_SERVICE=nlist(
+    "use","                             generic-service",
+    "host_name","                       node07.org.fr",
+    "service_description","             Workers ssh_known_hosts",
+    "contact_groups","                  admins",
+    "check_command","                   check_nrpe_long!check_ssh_known_hosts!60",
+    "normal_check_interval","           60 ; check every hour",
+    "max_check_attempts","              1",
+);
+variable NAGIOS_SERVICES=nagios_add_service(TMP_SERVICE);
+variable NAGIOS_USER_DEFINED_HOST_DEPENDENCIES=nagios_add_host_service_dependency("node07.org.fr","nrpe daemon","node07.org.fr","Workers ssh_known_hosts");
+include { 'monitoring/nagios3/server/config' };
+
+###
+#
+# software repositories (should be last)
+#
+include { 'rpms/siteupdates' };
+include { PKG_REPOSITORY_CONFIG };

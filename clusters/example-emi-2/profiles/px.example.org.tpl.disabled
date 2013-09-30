@@ -1,0 +1,21 @@
+############################################################
+#
+# object template px.example.org
+#
+# RESPONSIBLE: Charles Loomis
+#
+############################################################
+
+object template px.example.org;
+ 
+# Configure as a MyProxy server
+include { 'machine-types/px' };
+
+
+#
+# software repositories (should be last)
+#
+include { PKG_REPOSITORY_CONFIG };
+
+
+

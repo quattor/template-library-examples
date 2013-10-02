@@ -15,5 +15,6 @@ variable OS_ERRATA_TEMPLATE ?= nlist(
   'sl510-x86_64', 'rpms/errata',
   'sl520-x86_64', 'rpms/errata/20090826',
   'sl530-x86_64', 'rpms/errata/20090826',
+  'sl550-x86_64', 'rpms/errata/20130329',
 );
 

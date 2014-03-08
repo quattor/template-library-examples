@@ -10,7 +10,7 @@ variable DISK_GLITE_VAR_SIZE ?= 20*GB;
 variable CREAM_MYSQL_ADMINPWD ?= 'MyClrTextPwd';
 variable CREAM_DB_PASSWORD ?=  'MyClrTextPwd';
 
-include { 'machine-types/ce' };
+include { 'machine-types/grid/ce' };
 
 #
 # software repositories (should be last)

@@ -18,7 +18,7 @@ variable NODE_VO_CONFIG ?= "site/wmslb/vos";
 #include { 'iihe_wmslb' };
 variable WMSLB_CONFIG_SITE = "site/wmslb/config";
 
-include { 'machine-types/wmslb' };
+include { 'machine-types/grid/wmslb' };
 
 #
 # software repositories (should be last)

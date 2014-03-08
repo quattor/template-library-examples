@@ -10,7 +10,7 @@ object template topbdii.example.org;
 
 # Configure as a top level BDII
 variable BDII_TYPE = 'top';
-include { 'machine-types/bdii' };
+include { 'machine-types/grid/bdii' };
 
 
 #

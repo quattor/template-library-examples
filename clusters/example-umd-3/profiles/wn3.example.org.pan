@@ -1,7 +1,7 @@
 
 object template wn3.example.org;
 
-include { 'machine-types/wn' };
+include { 'machine-types/grid/wn' };
 
 #
 # software repositories (should be last)

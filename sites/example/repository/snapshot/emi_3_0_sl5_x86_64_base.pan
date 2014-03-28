@@ -6,12 +6,12 @@
 # url = http://quattor.web.lal.in2p3.fr/yum/snapshots/emi_3_base_sl6_x86_64
 #
 
-structure template repository/snapshot/emi_3_0_sl6_x86_64_base;
+structure template repository/snapshot/emi_3_0_sl5_x86_64_base;
 
-"name" = "emi_3_0_sl6_x86_64_base";
+"name" = "emi_3_0_sl5_x86_64_base";
 "owner" = "grid.support@lal.in2p3.fr";
 "protocols" = list(
   nlist("name","http",
-        "url","http://"+YUM_SNAPSHOT_URL+"/yum/snapshots/"+YUM_SNAPSHOT_DATE+"/emi_3_base_sl6_x86_64")
+        "url","http://"+YUM_SNAPSHOT_URL+"/yum/snapshots/"+YUM_SNAPSHOT_DATE+"/emi_3_base_sl5_x86_64")
 );
 

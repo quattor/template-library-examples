@@ -3,7 +3,7 @@
 #
 # name = site
 # owner = grid.support@lal.in2p3.fr
-# url = http://quattor.web.lal.in2p3.fr/yum/snapshots/site
+# url = http://uattor.web.lal.in2p3.fr/yum/snapshots/site
 #
 
 structure template repository/snapshot/site;
@@ -12,6 +12,6 @@ structure template repository/snapshot/site;
 "owner" = "grid.support@lal.in2p3.fr";
 "protocols" = list(
   nlist("name","http",
-        "url","http://quattor.web.lal.in2p3.fr/yum/snapshots/"+YUM_SNAPSHOT_DATE+"/site")
+        "url","http://"+YUM_SNAPSHOT_URL+"/yum/snapshots/"+YUM_SNAPSHOT_DATE+"/site")
 );
 

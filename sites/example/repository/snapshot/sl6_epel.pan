@@ -12,7 +12,7 @@ structure template repository/snapshot/sl6_epel;
 "owner" = "grid.support@lal.in2p3.fr";
 "protocols" = list(
   nlist("name","http",
-        "url","http://quattor.web.lal.in2p3.fr/yum/snapshots/"+YUM_SNAPSHOT_DATE+"/sl6_epel")
+        "url","http://"+YUM_SNAPSHOT_URL+"/yum/snapshots/"+YUM_SNAPSHOT_DATE+"/sl6_epel")
 );
 
 "contents" = nlist(

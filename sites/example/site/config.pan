@@ -10,17 +10,15 @@ variable QUATTOR_PROFILE_URL = "http://quattor.web.lal.in2p3.fr/profiles";
 
 #
 # Enable OS errata deployment by default
+# Useful only for SPMA-based deployment: remove when all your machines use YUM-based deployment
 #
 variable PKG_DEPLOY_OS_ERRATA ?= true;
 
+#
+# After configuring OS, configure network if it was not done during the base OS configuration
+#
+variable OS_BASE_CONFIG_SITE ?= 'site/config/network';
 
-#
-# Networking IP addresses
-#
-"/system/network/hostname" = HOSTNAME;
-"/system/network/domainname" = DOMAIN;
-"/system/network/nameserver" = NAMESERVERS;
-"/system/network/interfaces" = copy_network_params(NETWORK_PARAMS);
 
 # ntpd
 # ---------------------------------------------------------------------------- 

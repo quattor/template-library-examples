@@ -1,5 +1,5 @@
 
-template site/named;
+unique template site/named;
 
 include { 'components/named/config' };
 

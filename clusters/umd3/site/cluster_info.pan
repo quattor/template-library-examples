@@ -1,5 +1,5 @@
 
-template site/cluster_info;
+unique template site/cluster_info;
 
 #
 # basic site information

@@ -6,7 +6,7 @@
 #
 ############################################################
 
-template site/aii-config;
+unique template site/aii-config;
 
 include { 'pan/functions' };
 

@@ -1,5 +1,5 @@
 
-template site/config;
+unique template site/config;
 
 include { 'quattor/functions/filesystem' };
 

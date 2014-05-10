@@ -1,16 +1,18 @@
 ############################################################
 #
-# template pro_site_global_variables
+# template global_variables
 #
 # This template defines some standard global variables such
 # as the host name, domain name, etc.  This template should
-# be customized for your site. 
+# be customized for your site.
 #
-# RESPONSIBLE: Charles Loomis <charles.loomis@cern.ch>
+# This template is one of the first template included: thus
+# default values defined here cannot be redefined in cluster/site
+# specific templates using ?=. Use = instead.
 #
 ############################################################
 
-template site/global_variables;
+unique template site/global_variables;
 
 include { 'pan/functions' };
 

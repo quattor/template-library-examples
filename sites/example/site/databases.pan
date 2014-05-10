@@ -1,19 +1,15 @@
 ############################################################
 #
-# declaration template pro_site_databases
+# template databases
 #
 # These are "universal" variables which contain site-wide
 # information and can be used as mini-databases for other
-# templates.  These are global variable definitions in a 
-# declaration template, so these are defined exactly once.
-# These are not defined as "final" so be careful NEVER
-# to redefine these variables.
-# 
-# RESPONSIBLE: Charles Loomis <charles.loomis@cern.ch>
+# templates.
+#
 #
 ############################################################
 
-template site/databases;
+unique template site/databases;
 
 # Defines the mapping between the full hostname and the IP 
 # address. 

@@ -34,5 +34,11 @@ variable NETWORK_PARAMS = nlist("ip",DB_IP[escape(FULL_HOSTNAME)],
                                        "netmask","255.255.248.0");
 
 
+#
+# YUM related variables
+#
+variable YUM_SNAPSHOT_ROOT_URL ?= 'http://vmrepo.lal.in2p3.fr/yum/snapshots';
+
+
 # AII site specific configuration
 variable AII_CONFIG_SITE ?= 'site/aii-config';

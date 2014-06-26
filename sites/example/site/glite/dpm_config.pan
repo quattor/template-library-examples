@@ -7,6 +7,9 @@ template site/glite/dpm_config;
 # Just for convenience, this variable is not used by standard templates
 variable DPM_HEAD_NODE ?= 'se-dpm-server.example.org';
 
+# A 40 character hexadecimal string
+variable DMLITE_TOKEN_PASSWORD ?= '1234567890123456789012345678901234567890';
+
 variable DPM_DB_PARAMS ?= nlist(
     "password", "YourPrefClearPwd",
     "adminuser", "root",

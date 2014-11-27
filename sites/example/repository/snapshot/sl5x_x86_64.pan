@@ -7,4 +7,9 @@ structure template repository/snapshot/sl5x_x86_64;
   nlist("name","http",
         "url",YUM_SNAPSHOT_ROOT_URL+"/"+YUM_SNAPSHOT_DATE+"/sl5x-x86_64/SL")
 );
-
+# These packages are in EPEL already...
+"excludepkgs" = {
+  append('iwl5150-firmware');
+  append('iwl6000-firmware');
+  SELF;
+};

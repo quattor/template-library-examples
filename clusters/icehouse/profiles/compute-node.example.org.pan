@@ -8,17 +8,16 @@
 
 object template compute-node.example.org;
 
-variable BRIDGE_MAPPINGS ?= 'physnet1:br-eth1';
+variable MGMT_INTERFACE ?= 'eth0';
+variable DATA_INTERFACE ?= 'eth1';
+variable DATA_BRIDGE ?= 'br-' + DATA_INTERFACE;
+variable BRIDGE_MAPPINGS ?= 'physnet1:' + DATA_BRIDGE;
 
 include { 'machine-types/openstack/compute_node' };
 
 #----------------------------------------------------------------------------
 # Network configuration
 #----------------------------------------------------------------------------
-
-variable MGMT_INTERFACE ?= 'eth0';
-variable DATA_INTERFACE ?= 'eth1';
-variable DATA_BRIDGE ?= 'br-' + DATA_INTERFACE;
 
 include { 'components/network/config' };
 

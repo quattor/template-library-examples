@@ -8,19 +8,18 @@
 
 object template network-node.example.org;
 
-variable BRIDGE_MAPPINGS ?= 'physnet1:br-eth2';
+variable MGMT_INTERFACE ?= 'eth0';
+variable PUBLIC_INTERFACE ?= 'eth1';
+variable DATA_INTERFACE ?= 'eth2';
+variable PUBLIC_BRIDGE ?= 'br-ex';
+variable DATA_BRIDGE ?= 'br-' + DATA_INTERFACE;
+variable BRIDGE_MAPPINGS ?= 'physnet1:' + DATA_BRIDGE;
 
 include { 'machine-types/openstack/network_node' };
 
 #----------------------------------------------------------------------------
 # Network configuration
 #----------------------------------------------------------------------------
-
-variable MGMT_INTERFACE ?= 'eth0';
-variable PUBLIC_INTERFACE ?= 'eth1';
-variable DATA_INTERFACE ?= 'eth2';
-variable PUBLIC_BRIDGE ?= 'br-ex';
-variable DATA_BRIDGE ?= 'br-' + DATA_INTERFACE;
 
 include { 'components/network/config' };
 

@@ -1,4 +1,6 @@
 
 These templates provide examples which are generally useful, but need
-to be modified by each site.  See individual templates and QWG site
-(http://trac.lal.in2p3.fr/LCGQWG) for explanations of what they do. 
+to be modified by each site. 
+
+To learn how to modify these examples look at https://trac.lal.in2p3.fr/Quattor/wiki/Doc
+and for documentation about Quattor look http://quattor.org.

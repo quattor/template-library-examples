@@ -12,7 +12,7 @@ final variable DB_IP = nlist(
 # physical machine.
 # A different hardware template must be used for each machine
 final variable DB_MACHINE = nlist(
-    escape("one"),"hardware/machine/ibm/x3550/x_KDXXXX,
+    escape("one"),"hardware/machine/ibm/x3550/x_KDXXXX",
     escape("hyp01"),"hardware/machine/ibm/hs21xm/blade_99HXXXX",
     escape("vm"), "hardware/machine/one/example",
 );

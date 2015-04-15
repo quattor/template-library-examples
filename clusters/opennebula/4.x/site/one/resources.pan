@@ -2,7 +2,7 @@ unique template site/one/resources;
 
 # datastores templates
 prefix "/software/components/opennebula/datastores/0";
-"name" = "ceph.altaria";
+"name" = "ceph.example";
 "bridge_list" = list(FULL_HOSTNAME); # for now, do this from the headnode
 "ceph_host" = CEPH_MON_HOSTS;
 "ceph_secret" = CEPH_LIBVIRT_UUID;

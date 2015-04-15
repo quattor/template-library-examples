@@ -24,7 +24,7 @@ prefix "/software/components/opennebula/oned";
 #  vnet common templates
 prefix '/software/components/opennebula/vnets/0/';
 "name" = DEFAULT_DOMAIN;
-"bridge" = "br100";
+"bridge" = "bridge1";
 "gateway" = DEFAULT_GATEWAY;
 "network_mask" = DEFAULT_NETMASK;
 "dns" = NAMESERVERS[0];
@@ -45,12 +45,12 @@ prefix "/software/components/opennebula";
 
 # ONE local common users
 prefix "/software/components/opennebula/users/0";
-"user" = "lsimngar";
+"user" = "user01";
 "password" = "user_fancy_pass";
 "ssh_public_key" = "";
 
 prefix "/software/components/opennebula/users/1";
-"user" = "stdweird";
+"user" = "user02";
 "password" = "another_user_fancy_pass";
 
 # RPC endpoint

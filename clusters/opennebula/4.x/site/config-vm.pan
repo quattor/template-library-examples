@@ -6,7 +6,6 @@ unique template site/config-vm;
 prefix "/system/opennebula";
 "vnet" = nlist(
     "eth0", "example.os",
-    "eth1", "example.vsc"
 );
 
 # Set storage

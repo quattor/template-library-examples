@@ -9,4 +9,3 @@ include 'site/ceph/client/libvirt';
 include 'common/opennebula/oneadmin';
 include 'site/one/variables';
 include 'common/opennebula/common';
-variable OS_REPOSITORY_LIST = append('experimental');

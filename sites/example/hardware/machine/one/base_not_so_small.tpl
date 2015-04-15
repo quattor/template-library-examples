@@ -1,0 +1,18 @@
+structure template hardware/machine/one/base_not_so_small;
+
+"location" = undef;
+"serialnumber" = undef;
+
+"model" = "ONE Virtual Machine";
+"bios/version" = "0.5.1";
+"bios/releasedate" = "01/01/2007";
+
+"cpu" = list(create("hardware/cpu/intel_xeon_E5520_vm_quadcore"));
+
+"harddisks" = nlist("vda", create("hardware/harddisk/sas", "capacity", 40*GB));
+
+"ram" = list(create("hardware/ram/generic", "size", 4*GB));
+
+"cards/nic" = nlist("eth0", create("hardware/nic/bnx2"), "eth1", create("hardware/nic/bnx2"),);
+
+"cards/nic/eth0/boot" = true;

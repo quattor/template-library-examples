@@ -1,0 +1,14 @@
+unique template site/one/variables;
+
+final variable ONEADMIN_PUBKEYS = list(
+'ssh-dss AAAAB3NzaC1kc3MAAACBAJpXPBO8YpcUvftVPWseQ8x2v5Hu2DZ1BquRTtubxAId6XIwWD5WUDQII5N98UOWYlFCWUF86opoVmlEXDHnHgUg7oHBwgeNiT9e78w1tV0JSzXMKm1eaQQADh7IxX3S1jb3B5SjWVFAhBvwJMLvYn1noF7tdABqLNsf2x99LGh1AAAAFQChq+NNgNP4I0QMD//wfxb1dCgYPQAAAIBusWRje9S4AcI7O8UWdnRdAIlYhi0CtAeIR5/4arpG3jEJgrQNf/GzNfvlHOxcpabXpJ7U5A2MqxDIi+3kMtvN/zyGxspueYkAcssXaDzfHhq/MJo+T+FoDRVyORirnyMFbZqO6HpdAlPgcFanON0ioKRihCwi81Ud0DcldNnIMQAAAIAHuo36/UnbiVkpPahgatKDYvCnc92SeB9cCQekVdEFYjnKtLz/nSfLkgEWWMHg+aL8NqbMM1aDFDzuv29edxHarm2a9XhOHmyqgsmOWjadeZhNH4zYB55yxRxX1q88W8E4k/1Lw1VlXuR0JsQ2BqhECxbcRQ13/FysmSsI6rBBog== oneadmin@one01.altaria.os',
+);
+
+
+# just generate one uuid per cluster
+final variable CEPH_LIBVIRT_UUID = "8271aaaa-385d-44d7-yyyy-xxxxxxxxxxxx";
+
+# set passwords
+final variable OPENNEBULA_ONEADMIN = ALTARIA_OPENNEBULA_ONEADMIN;
+final variable OPENNEBULA_MYSQL_ADMIN = ALTARIA_OPENNEBULA_MYSQL_ADMIN;
+final variable OPENNEBULA_MYSQL_ONEADMIN = ALTARIA_OPENNEBULA_MYSQL_ONEADMIN;

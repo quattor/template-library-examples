@@ -39,6 +39,9 @@ final variable DB_IP = nlist(
   escape("hydra.example.org"),"192.168.0.21",
   escape("cream.example.org"),"192.168.0.22",
   escape("argus.example.org"),"192.168.0.23",
+  escape("one.example.org"),"10.141.2.11",
+  escape("hyp01.example.org"), "10.141.2.21",
+  escape("vm.example.org"), "10.141.2.31",
 );
 
 # Defines the mapping between the full hostname and the
@@ -71,6 +74,9 @@ final variable DB_MACHINE = nlist(
   escape("wn3.example.org"),"hardware/machine/200/49/Hp1/34",
   escape("xen-host.example.org"),"hardware/machine/200/49/Hp1/33",
   escape("xen-guest.example.org"),"hardware/machine/xen/base",
+  escape("one.example.org"),"hardware/machine/ibm/x3550/x_KDWGDMW",
+  escape("hyp01.example.org"),"hardware/machine/ibm/hs21xm/blade_99H0888",
+  escape("vm.example.org"), "hardware/machine/one/example",
 );
 
 include {"site/xen/db"};

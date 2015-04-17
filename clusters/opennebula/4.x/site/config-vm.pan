@@ -4,12 +4,12 @@ unique template site/config-vm;
 
 # Set network
 prefix "/system/opennebula";
-"vnet" = nlist(
+"vnet" = dict(
     "eth0", "example.os",
 );
 
 # Set storage
-"datastore" = nlist(
+"datastore" = dict(
     "vda", "ceph.example",
 );
 

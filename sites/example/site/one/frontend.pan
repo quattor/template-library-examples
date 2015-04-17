@@ -10,7 +10,7 @@ include 'components/opennebula/config';
 include 'site/one/resources';
 
 prefix "/software/components/opennebula/oned";
-"db" = nlist(
+"db" = dict(
     "backend", "mysql",
     "server", "localhost",
     "port", 0,
@@ -60,7 +60,7 @@ prefix "/software/components/opennebula/rpc";
 "host" = "localhost";
 "port" = 2633;
 
-"/software/components/dirperm/paths" = append(nlist(
+"/software/components/dirperm/paths" = append(dict(
     "path", "/etc/one",
     "owner", "oneadmin:oneadmin",
     "type", "d",
@@ -84,18 +84,18 @@ prefix "/software/components/download/files";
 );
 
 prefix "/software/components/chkconfig/service";
-"opennebula" = nlist("on", "","startstop", true);
-"opennebula-econe" = nlist("on", "","startstop", true);
-"opennebula-gate" = nlist("on", "","startstop", true);
-"opennebula-novnc" = nlist("on", "","startstop", true);
-"opennebula-occi" = nlist("on", "","startstop", true);
-"opennebula-sunstone" = nlist("on", "","startstop", true);
+"opennebula" = dict("on", "","startstop", true);
+"opennebula-econe" = dict("on", "","startstop", true);
+"opennebula-gate" = dict("on", "","startstop", true);
+"opennebula-novnc" = dict("on", "","startstop", true);
+"opennebula-occi" = dict("on", "","startstop", true);
+"opennebula-sunstone" = dict("on", "","startstop", true);
 
 prefix "/software/packages";
-"{opennebula-server}"=nlist();
-"{opennebula-sunstone}"=nlist();
-"{opennebula-gate}"=nlist();
-"{opennebula-flow}"=nlist();
+"{opennebula-server}"=dict();
+"{opennebula-sunstone}"=dict();
+"{opennebula-gate}"=dict();
+"{opennebula-flow}"=dict();
 
 include 'site/one/rubygems';
 

@@ -9,10 +9,10 @@ structure template hardware/machine/one/base_not_so_small;
 
 "cpu" = list(create("hardware/cpu/intel_xeon_E5520_vm_quadcore"));
 
-"harddisks" = nlist("vda", create("hardware/harddisk/sas", "capacity", 40*GB));
+"harddisks" = dict("vda", create("hardware/harddisk/sas", "capacity", 40*GB));
 
 "ram" = list(create("hardware/ram/generic", "size", 4*GB));
 
-"cards/nic" = nlist("eth0", create("hardware/nic/bnx2"), "eth1", create("hardware/nic/bnx2"),);
+"cards/nic" = dict("eth0", create("hardware/nic/bnx2"), "eth1", create("hardware/nic/bnx2"),);
 
 "cards/nic/eth0/boot" = true;

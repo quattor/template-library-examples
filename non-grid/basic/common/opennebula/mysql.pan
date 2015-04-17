@@ -1,7 +1,7 @@
 unique template common/opennebula/mysql;
 
 prefix "/software/packages";
-"{mysql-server}" = nlist();
+"{mysql-server}" = dict();
 
 include 'components/mysql/config';
 
@@ -26,4 +26,4 @@ prefix "/software/components/mysql/databases/opennebula";
 "initScript/file" = "/dev/null";
 
 prefix "/software/components/chkconfig/service";
-"mysqld" = nlist("on", "","startstop", true);
+"mysqld" = dict("on", "","startstop", true);

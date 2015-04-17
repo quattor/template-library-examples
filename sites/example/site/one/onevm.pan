@@ -8,5 +8,5 @@ include 'site/config-vm';
 
 include 'quattor/aii/opennebula/default';
 
-"/software/packages/{acpid}"=nlist();
-"/software/components/chkconfig/service/acpid" = nlist('on','', 'startstop',true);
+"/software/packages/{acpid}" = dict();
+"/software/components/chkconfig/service/acpid" = dict('on','', 'startstop',true);

@@ -6,4 +6,4 @@ include 'site/one/frontend';
 #
 # software repositories (should be last)
 #
-include { PKG_REPOSITORY_CONFIG };
+include PKG_REPOSITORY_CONFIG;

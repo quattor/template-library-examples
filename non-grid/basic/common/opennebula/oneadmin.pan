@@ -1,6 +1,6 @@
 unique template common/opennebula/oneadmin;
 
-include { 'components/accounts/config' };
+include 'components/accounts/config';
 
 prefix '/software/components/accounts';
 

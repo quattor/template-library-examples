@@ -67,20 +67,20 @@ prefix "/software/components/opennebula/rpc";
     "perm", "0755",
 ));
 
-include { 'common/download/service' };
+include 'common/download/service';
 prefix "/software/components/download/files";
 "{/var/lib/one/.ssh/id_dsa}" = create("common/download/auth", 
     "href", "secure/privkey/id_dsa", 
     "group", "oneadmin",
     "owner", "oneadmin",
-    "perm", "0600"
+    "perm", "0600",
 );
 
 "{/var/lib/one/.ssh/id_dsa.pub}" = create("common/download/auth",
     "href", "secure/privkey/id_dsa.pub",
     "group", "oneadmin",
     "owner", "oneadmin",
-    "perm", "0644"
+    "perm", "0644",
 );
 
 prefix "/software/components/chkconfig/service";

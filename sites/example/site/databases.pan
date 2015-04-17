@@ -79,4 +79,4 @@ final variable DB_MACHINE = dict(
   escape("vm.example.org"), "hardware/machine/one/example",
 );
 
-include {"site/xen/db"};
+include "site/xen/db";

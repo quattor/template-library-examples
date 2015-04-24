@@ -99,6 +99,22 @@ prefix "/software/packages";
 
 include 'site/one/rubygems';
 
-# ONE server monitoring
-"/system/monitoring/hostgroups" = append("one_server");
+# SSH oneadmin config
+include 'metaconfig/ssh/schema';
 
+bind "/software/components/metaconfig/services/{/var/lib/one/.ssh/config}/contents" = ssh_config_file;
+
+prefix "/software/components/metaconfig/services/{/var/lib/one/.ssh/config}";
+"module" = "ssh/client";
+"owner" = "oneadmin";
+"group"= "oneadmin";
+
+prefix "/software/components/metaconfig/services/{/var/lib/one/.ssh/config}/contents";
+
+"Host" =  append(
+            dict(
+                "hostnames", list("*"),
+                "ControlMaster", "auto",
+                "ControlPath", "~/.ssh/%r@%h:%p",
+                )
+       );

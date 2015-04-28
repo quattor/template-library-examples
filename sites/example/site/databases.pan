@@ -13,7 +13,7 @@ unique template site/databases;
 
 # Defines the mapping between the full hostname and the IP 
 # address. 
-final variable DB_IP = nlist(
+final variable DB_IP = dict(
   escape("apel.example.org"),"192.168.0.4",
   escape("bdii.example.org"),"192.168.0.1",
   escape("ce.example.org"),"192.168.0.2",
@@ -39,12 +39,15 @@ final variable DB_IP = nlist(
   escape("hydra.example.org"),"192.168.0.21",
   escape("cream.example.org"),"192.168.0.22",
   escape("argus.example.org"),"192.168.0.23",
+  escape("one.example.org"),"192.168.0.24",
+  escape("hyp01.example.org"), "192.168.0.25",
+  escape("vm.example.org"), "192.168.0.26",
 );
 
 # Defines the mapping between the full hostname and the
 # physical machine. 
 # A different hardware template must be used for each machine
-final variable DB_MACHINE = nlist(
+final variable DB_MACHINE = dict(
   escape("apel.example.org"),"hardware/machine/200/48/Dell2/33",
   escape("argus.example.org"),"hardware/machine/200/49/Ibm1/43",
   escape("bdii.example.org"),"hardware/machine/200/49/Hp1/30",
@@ -71,6 +74,9 @@ final variable DB_MACHINE = nlist(
   escape("wn3.example.org"),"hardware/machine/200/49/Hp1/34",
   escape("xen-host.example.org"),"hardware/machine/200/49/Hp1/33",
   escape("xen-guest.example.org"),"hardware/machine/xen/base",
+  escape("one.example.org"),"hardware/machine/ibm/x3550/x_KDXXXX",
+  escape("hyp01.example.org"),"hardware/machine/ibm/hs21xm/blade_99HXXXX",
+  escape("vm.example.org"), "hardware/machine/one/example",
 );
 
-include {"site/xen/db"};
+include "site/xen/db";

@@ -5,12 +5,12 @@
 
 unique template repository/config;
 
-include {'pan/functions'};
+include 'pan/functions';
 
-include { 'repository/snapshot/snapshot_variables' };
+include'repository/snapshot/snapshot_variables';
 
 # Repositories related to base OS and quattor client (should be first)
-include {'repository/config/os'};
+include 'repository/config/os';
 
 # Local Repositories
 variable YUM_SITE_SNAPSHOT_NS ?= YUM_SNAPSHOT_NS;
@@ -21,30 +21,21 @@ variable DEBUG = debug('OS_REPOSITORY_LIST = ' + to_string(OS_REPOSITORY_LIST) +
                        'QUATTOR_REPOSITORY_LIST = ' + to_string(QUATTOR_REPOSITORY_LIST) + "\n" +
                        'SITE_REPOSITORY_LIST = ' + to_string(SITE_REPOSITORY_LIST) + "\n" +
                        'SITE_REPOSITORY_CONFIG = ' + to_string(SITE_REPOSITORY_CONFIG) + "\n");
-include {'quattor/functions/repository'};
+include 'quattor/functions/repository';
 '/software/repositories' = add_repositories(QUATTOR_REPOSITORY_LIST);
-#'/software/repositories' = add_repositories(SITE_REPOSITORY_LIST,YUM_SITE_SNAPSHOT_NS);
 '/software/repositories' = add_repositories(SITE_REPOSITORY_LIST);
 '/software/repositories' = repository_config(SITE_REPOSITORY_CONFIG);
-
-# Repositories related to grid middleware
-# Only if it can be found in the loadpath (else this is a machine not
-# running gLite like a non UI LAL server)
-include { if_exists('repository/config/grid') };
-
-# Add StratusLab repository
-include { if_exists('repository/config/stratuslab') };
 
 # Repositories related to Nagios
 variable REPOSITORY_CONFIG_NAGIOS ?= null;
 variable REPOSITORY_CONFIG_NAGIOS_INCLUDE = {
-        if (exists(REPOSITORY_CONFIG_NAGIOS) && is_defined(REPOSITORY_CONFIG_NAGIOS)) {
-                return(REPOSITORY_CONFIG_NAGIOS);
-        } else {
-                return(null);
-        };
+  if (exists(REPOSITORY_CONFIG_NAGIOS) && is_defined(REPOSITORY_CONFIG_NAGIOS)) {
+    REPOSITORY_CONFIG_NAGIOS;
+  } else {
+    null;
+  };
 };
-include { REPOSITORY_CONFIG_NAGIOS_INCLUDE };
+include REPOSITORY_CONFIG_NAGIOS_INCLUDE;
 
 # Register repository changes with yum based spma
 '/software/components/spma/register_change' = {
@@ -56,4 +47,4 @@ include { REPOSITORY_CONFIG_NAGIOS_INCLUDE };
 };
 
 # Cleanup repository information
-include { 'components/spma/repository_cleanup' };
+include 'components/spma/repository_cleanup';

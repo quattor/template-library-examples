@@ -38,6 +38,6 @@ variable PKG_REPOSITORY_CONFIG ?= 'repository/config';
 #
 # set root password on machines
 #
-include { 'components/accounts/config' };
+include 'components/accounts/config';
 "/software/components/accounts/rootpwd" ?= "$1$57qRuCXe$NPngMkg4BrLBf5hfJzJh21";
 "/software/components/accounts/shadowpwd" = true;

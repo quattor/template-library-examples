@@ -1,10 +1,12 @@
-###############################################################################
-#
-# object template network-node.example.org.pan
-#
-# RESPONSIBLE: Jerome Pansanel
-#
-###############################################################################
+@maintainer{
+  name = Jerome Pansanel
+  email = jerome.pansanel@iphc.cnrs.fr
+}
+
+@{
+  Example template that shows the configuration of an OpenStack Network 
+  node
+}
 
 object template network-node.example.org;
 
@@ -15,15 +17,13 @@ variable PUBLIC_BRIDGE ?= 'br-ex';
 variable DATA_BRIDGE ?= 'br-' + DATA_INTERFACE;
 variable BRIDGE_MAPPINGS ?= 'physnet1:' + DATA_BRIDGE;
 
-include { 'machine-types/openstack/network_node' };
+include 'machine-types/openstack/network_node';
 
 #----------------------------------------------------------------------------
 # Network configuration
 #----------------------------------------------------------------------------
 
-include { 'components/network/config' };
-
-'/system/network/default_gateway' = '100.1.1.1';
+include 'components/network/config';
 
 '/system/network/interfaces/' = {
   SELF[MGMT_INTERFACE] = nlist(
@@ -37,7 +37,7 @@ include { 'components/network/config' };
     'device',DATA_BRIDGE,
     'type','OVSBridge',
     'bootproto','static',
-    'ip','30.0.0.3',
+    'ip','192.168.10.32',
     'netmask','255.255.255.0',
     'onboot','yes',
   );
@@ -65,7 +65,4 @@ include { 'components/network/config' };
 #
 # software repositories (should be last)
 #
-include { PKG_REPOSITORY_CONFIG };
-
-
-
+include PKG_REPOSITORY_CONFIG;

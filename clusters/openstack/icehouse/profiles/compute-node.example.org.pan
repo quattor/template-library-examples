@@ -1,10 +1,12 @@
-###############################################################################
-#
-# object template compute-node.example.org.pan
-#
-# RESPONSIBLE: Jerome Pansanel
-#
-###############################################################################
+@maintainer{
+  name = Jerome Pansanel
+  email = jerome.pansanel@iphc.cnrs.fr
+}
+
+@{
+  Example template that shows the configuration of an OpenStack Compute
+  node
+}
 
 object template compute-node.example.org;
 
@@ -13,15 +15,13 @@ variable DATA_INTERFACE ?= 'eth1';
 variable DATA_BRIDGE ?= 'br-' + DATA_INTERFACE;
 variable BRIDGE_MAPPINGS ?= 'physnet1:' + DATA_BRIDGE;
 
-include { 'machine-types/openstack/compute_node' };
+include 'machine-types/openstack/compute_node';
 
 #----------------------------------------------------------------------------
 # Network configuration
 #----------------------------------------------------------------------------
 
-include { 'components/network/config' };
-
-'/system/network/default_gateway' = '100.1.1.1';
+include 'components/network/config';
 
 '/system/network/interfaces/' = {
   SELF[MGMT_INTERFACE] = nlist(
@@ -50,10 +50,8 @@ include { 'components/network/config' };
 
   SELF;
 };
+
 #
 # software repositories (should be last)
 #
-include { PKG_REPOSITORY_CONFIG };
-
-
-
+include PKG_REPOSITORY_CONFIG;

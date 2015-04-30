@@ -24,14 +24,14 @@ include 'machine-types/openstack/compute_node';
 include 'components/network/config';
 
 '/system/network/interfaces/' = {
-  SELF[MGMT_INTERFACE] = nlist(
+  SELF[MGMT_INTERFACE] = dict(
     'device',MGMT_INTERFACE,
     'bootproto','dhcp',
     'onboot', 'yes',
     'type','Ethernet',
   );
 
-  SELF[DATA_BRIDGE] = nlist (
+  SELF[DATA_BRIDGE] = dict(
     'device',DATA_BRIDGE,
     'type', 'OVSBridge',
     'bootproto','static',
@@ -40,7 +40,7 @@ include 'components/network/config';
     'onboot','yes',
   );
 
-  SELF[DATA_INTERFACE] = nlist(
+  SELF[DATA_INTERFACE] = dict(
     'device',DATA_INTERFACE,
     'type','OVSPort',
     'bootproto','none',

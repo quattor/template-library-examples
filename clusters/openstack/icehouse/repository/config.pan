@@ -15,7 +15,7 @@ include 'repository/config/os';
 # Local Repositories
 variable YUM_SITE_SNAPSHOT_NS ?= YUM_SNAPSHOT_NS;
 variable SITE_REPOSITORY_LIST ?= list();
-variable SITE_REPOSITORY_CONFIG ?= nlist();
+variable SITE_REPOSITORY_CONFIG ?= dict();
 variable QUATTOR_REPOSITORY_LIST ?= list('snapshot/' + REPOSITORY_SNAPSHOT + '/Quattor-' + QUATTOR_RELEASE);
 variable DEBUG = debug('OS_REPOSITORY_LIST = ' + to_string(OS_REPOSITORY_LIST) + "\n" +
                        'QUATTOR_REPOSITORY_LIST = ' + to_string(QUATTOR_REPOSITORY_LIST) + "\n" +

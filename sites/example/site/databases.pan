@@ -39,9 +39,9 @@ final variable DB_IP = nlist(
   escape("hydra.example.org"),"192.168.0.21",
   escape("cream.example.org"),"192.168.0.22",
   escape("argus.example.org"),"192.168.0.23",
-  escape("cloud-controller.example.org"),"30.0.0.2",
-  escape("network-node.example.org"),"100.1.1.3",
-  escape("compute-node.example.org"),"100.1.1.4",
+  escape("cloud-controller.example.org"),"192.168.10.8",
+  escape("network-node.example.org"),"192.168.0.26",
+  escape("compute-node.example.org"),"192.168.0.32",
 );
 
 # Defines the mapping between the full hostname and the

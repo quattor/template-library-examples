@@ -9,10 +9,10 @@ structure template hardware/machine/200/49/Ibm1/40;
 "location" = "200/49/Ibm1/39";
 "serialnumber" = "KKWMZ8G";
 
-"cpu" = list(create("hardware/cpu/opteron_275"),
-             create("hardware/cpu/opteron_275"),
-             create("hardware/cpu/opteron_275"),
-             create("hardware/cpu/opteron_275"));
+"cpu" = list(create("hardware/cpu/amd/opteron_275"),
+             create("hardware/cpu/amd/opteron_275"),
+             create("hardware/cpu/amd/opteron_275"),
+             create("hardware/cpu/amd/opteron_275"));
 
 "harddisks" = nlist("sda", create("hardware/harddisk/sata",
 				  "capacity", 80*GB));

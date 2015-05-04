@@ -9,8 +9,8 @@ structure template hardware/machine/200/49/Hp1/33;
 "location" = "Room 200-48 Rack HP1 Shelf 33";
 "serialnumber" = "a remplir";
  
-"cpu" = list(create("hardware/cpu/opteron_248"),
-             create("hardware/cpu/opteron_248"));
+"cpu" = list(create("hardware/cpu/amd/opteron_248"),
+             create("hardware/cpu/amd/opteron_248"));
 
 "harddisks" = nlist("hda", create("hardware/harddisk/ide", "capacity", 40*GB));
 

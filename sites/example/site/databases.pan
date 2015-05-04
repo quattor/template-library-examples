@@ -42,6 +42,9 @@ final variable DB_IP = dict(
   escape("one.example.org"),"192.168.0.24",
   escape("hyp01.example.org"), "192.168.0.25",
   escape("vm.example.org"), "192.168.0.26",
+  escape("cloud-controller.example.org"),"192.168.10.8",
+  escape("network-node.example.org"),"192.168.0.30",
+  escape("compute-node.example.org"),"192.168.0.32",
 );
 
 # Defines the mapping between the full hostname and the
@@ -77,6 +80,9 @@ final variable DB_MACHINE = dict(
   escape("one.example.org"),"hardware/machine/ibm/x3550/x_KDXXXX",
   escape("hyp01.example.org"),"hardware/machine/ibm/hs21xm/blade_99HXXXX",
   escape("vm.example.org"), "hardware/machine/one/example",
+  escape("cloud-controller.example.org"),"hardware/machine/200/48/Dell2/42",
+  escape("network-node.example.org"),"hardware/machine/200/48/Dell2/43",
+  escape("compute-node.example.org"),"hardware/machine/200/48/Dell2/44",
 );
 
 include "site/xen/db";

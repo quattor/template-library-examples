@@ -1,10 +1,3 @@
-############################################################
-#
-# object template wn.example.org
-#
-# RESPONSIBLE: Charles Loomis
-#
-############################################################
 
 object template wn.example.org;
 

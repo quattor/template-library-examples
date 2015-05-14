@@ -8,9 +8,9 @@ variable LFC_LOCAL_VOS = list('alice');
 variable VOS = merge(LFC_CENTRAL_VOS, LFC_LOCAL_VOS);
 
 
-include { 'machine-types/grid/lfc' };
+include 'machine-types/grid/lfc';
 
 #
 # software repositories (should be last)
 #
-include { PKG_REPOSITORY_CONFIG };
+include PKG_REPOSITORY_CONFIG;

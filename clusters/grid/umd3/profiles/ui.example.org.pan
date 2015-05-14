@@ -1,6 +1,6 @@
 object template ui.example.org;
 
-include { 'machine-types/grid/ui' };
+include 'machine-types/grid/ui';
 
-include { PKG_REPOSITORY_CONFIG };
+include PKG_REPOSITORY_CONFIG;
 

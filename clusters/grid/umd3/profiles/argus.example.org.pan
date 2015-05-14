@@ -12,12 +12,12 @@ variable PDP_ADMIN_PASSWORD = 'pdpadmin_0123456789';
 #
 # Configure an Argus
 #
-include { 'machine-types/grid/argus' };
+include 'machine-types/grid/argus';
 
 #
 # software repositories (should be last)
 #
-include { PKG_REPOSITORY_CONFIG };
+include PKG_REPOSITORY_CONFIG;
 
 
 

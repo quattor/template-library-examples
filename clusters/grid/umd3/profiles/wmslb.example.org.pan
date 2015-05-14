@@ -10,10 +10,10 @@ variable NODE_VO_CONFIG ?= "site/wmslb/vos";
 
 variable WMS_CONFIG_SITE = "site/wmslb/config";
 
-include { 'machine-types/grid/wmslb' };
+include 'machine-types/grid/wmslb';
 
 #
 # software repositories (should be last)
 #
-include { PKG_REPOSITORY_CONFIG };
+include PKG_REPOSITORY_CONFIG;
 

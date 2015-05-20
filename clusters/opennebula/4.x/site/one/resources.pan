@@ -13,6 +13,13 @@ prefix "/software/components/opennebula/datastores/0";
 "type" = "IMAGE_DS";
 "rbd_format" = 2;
 
+prefix "/software/components/opennebula/datastores/1";
+"name" = "nfs.example";
+"datastore_capacity_check" = true;
+"ds_mad" = "fs";
+"tm_mad" = "shared";
+"type" = "IMAGE_DS";
+
 # untouchables resources
 prefix "/software/components/opennebula/untouchables";
 "datastores" = list('system');

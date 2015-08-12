@@ -6,48 +6,44 @@ unique template site/one/rubygems;
 
 '/software/packages/' = if ( OS_VERSION_PARAMS['majorversion'] == '7' )
 {
-    npush(
-        escape('rubygem-nokogiri'), dict(),
-        escape('rubygem-json'), dict(),
-        escape('rubygem-rack'), dict(),
-        escape('rubygem-sinatra'), dict(),
-        escape('rubygem-thin'), dict(),
-        escape('rubygem-zendesk_api'), dict(),
-        escape('rubygem-sqlite3'), dict(),
-        escape('rubygem-sequel'), dict(),
-        escape('rubygem-amazon-ec2'), dict(),
-        escape('rubygem-uuidtools'), dict(),
-        escape('rubygem-curb'), dict(),
-        escape('rubygem-net-ldap'), dict(),
-        escape('rubygem-builder'), dict(),
-        escape('rubygem-trollop'), dict(),
-        escape('rubygem-treetop'), dict(),
-        escape('rubygem-parse-cron'), dict(),
-        escape('rubygem-aws-sdk'), dict(),
-        escape('rubygem-ox'), dict(),
-        escape('rubygem-mysql'), dict(),
-        escape('rubygem-softlayer_api'), dict(),
-        escape('rubygem-configparser'), dict(),
-        escape('rubygem-azure'), dict(),
-    )
+    pkg_repl('rubygem-nokogiri');
+    pkg_repl('rubygem-json');
+    pkg_repl('rubygem-rack');
+    pkg_repl('rubygem-sinatra');
+    pkg_repl('rubygem-thin');
+    pkg_repl('rubygem-zendesk_api');
+    pkg_repl('rubygem-sqlite3');
+    pkg_repl('rubygem-sequel');
+    pkg_repl('rubygem-amazon-ec2');
+    pkg_repl('rubygem-uuidtools');
+    pkg_repl('rubygem-curb');
+    pkg_repl('rubygem-net-ldap');
+    pkg_repl('rubygem-builder');
+    pkg_repl('rubygem-trollop');
+    pkg_repl('rubygem-treetop');
+    pkg_repl('rubygem-parse-cron');
+    pkg_repl('rubygem-aws-sdk');
+    pkg_repl('rubygem-ox');
+    pkg_repl('rubygem-mysql');
+    pkg_repl('rubygem-softlayer_api');
+    pkg_repl('rubygem-configparser');
+    pkg_repl('rubygem-azure');
 } else {
-    npush(
-        escape('rubygem-zendesk_api'), dict(),
-        escape('rubygem-treetop'), dict(),
-        escape('rubygem-amazon-ec2'), dict(),
-        escape('rubygem-aws-sdk'), dict(),
-        escape('rubygem-builder'), dict(),
-        escape('rubygem-curb'), dict(),
-        escape('rubygem-mini_portile'), dict(),
-        escape('rubygem-mysql'), dict(),
-        escape('rubygem-net-ldap'), dict(),
-        escape('rubygem-ox'), dict(),
-        escape('rubygem-parse-cron'), dict(),
-        escape('rubygem-rack-protection'), dict(),
-        escape('rubygem-sqlite3'), dict(),
-        escape('rubygem-tilt'), dict(),
-        escape('rubygem-trollop'), dict(),
-        escape('rubygem-xml-simple'), dict(),
-        escape('rubygem-zendesk_api'), dict(),
-    )
+    pkg_repl('rubygem-zendesk_api');
+    pkg_repl('rubygem-treetop');
+    pkg_repl('rubygem-amazon-ec2');
+    pkg_repl('rubygem-aws-sdk');
+    pkg_repl('rubygem-builder');
+    pkg_repl('rubygem-curb');
+    pkg_repl('rubygem-mini_portile');
+    pkg_repl('rubygem-mysql');
+    pkg_repl('rubygem-net-ldap');
+    pkg_repl('rubygem-ox');
+    pkg_repl('rubygem-parse-cron');
+    pkg_repl('rubygem-rack-protection');
+    pkg_repl('rubygem-sqlite3');
+    pkg_repl('rubygem-tilt');
+    pkg_repl('rubygem-trollop');
+    pkg_repl('rubygem-xml-simple');
+    pkg_repl('rubygem-zendesk_api');
 };

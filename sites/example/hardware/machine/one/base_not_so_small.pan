@@ -7,7 +7,7 @@ structure template hardware/machine/one/base_not_so_small;
 "bios/version" = "0.5.1";
 "bios/releasedate" = "01/01/2007";
 
-"cpu" = list(create("hardware/cpu/intel_xeon_E5520_vm_quadcore"));
+"cpu" = list(create("hardware/cpu/intel_xeon_e5520_vm_quadcore"));
 
 "harddisks" = dict("vda", create("hardware/harddisk/sas", "capacity", 40*GB));
 

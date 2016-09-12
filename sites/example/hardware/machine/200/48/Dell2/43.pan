@@ -8,8 +8,8 @@ structure template hardware/machine/200/48/Dell2/43;
 "location" = "200/48/Dell2/43";
 "serialnumber" = "8RTTL2K";
 
-"cpu" = list(create("hardware/cpu/intel/xeon_E5_2440"),
-             create("hardware/cpu/intel/xeon_E5_2440"));
+"cpu" = list(create("hardware/cpu/intel/xeon_e5_2440"),
+             create("hardware/cpu/intel/xeon_e5_2440"));
 
 "harddisks" = nlist("sda", create("hardware/harddisk/sata",
 				  "capacity", 1000*GB));

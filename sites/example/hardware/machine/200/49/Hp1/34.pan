@@ -5,8 +5,8 @@ structure template hardware/machine/200/49/Hp1/34;
 
 # 'cpu' describes sockets, number of cores per socket is an attribute of
 # the CPU description.
-"cpu" = list(create("hardware/cpu/intel/xeon_E5420"),
-             create("hardware/cpu/intel/xeon_E5420"));
+"cpu" = list(create("hardware/cpu/intel/xeon_e5420"),
+             create("hardware/cpu/intel/xeon_e5420"));
 
 "harddisks" = nlist("hda", create("hardware/harddisk/ide", "capacity", 40*GB));
 

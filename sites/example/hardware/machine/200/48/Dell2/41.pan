@@ -9,8 +9,8 @@ structure template hardware/machine/200/48/Dell2/41;
 "location" = "200/48/Dell2/41";
 "serialnumber" = "8RTTL2J";
 
-"cpu" = list(create("hardware/cpu/intel/xeon_E5140"),
-             create("hardware/cpu/intel/xeon_E5140"));
+"cpu" = list(create("hardware/cpu/intel/xeon_e5140"),
+             create("hardware/cpu/intel/xeon_e5140"));
 
 "harddisks" = nlist("sda", create("hardware/harddisk/sata",
 				  "capacity", 80*GB));

@@ -19,8 +19,8 @@ structure template hardware/machine/200/49/Ibm1/40;
 
 "ram" = list(create("hardware/ram/generic", "size", 8192*MB));
 
-"cards/nic" = nlist("eth0",create("hardware/nic/bcm5700"),
-                    "eth1",create("hardware/nic/bcm5700"));
+"cards/nic" = nlist("eth0",create("hardware/nic/broadcom/bcm5700"),
+                    "eth1",create("hardware/nic/broadcom/bcm5700"));
 
 "cards/nic/eth0/hwaddr" = "00:11:25:C4:21:02";
 "cards/nic/eth1/hwaddr" = "00:11:25:C4:21:03";

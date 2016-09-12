@@ -13,6 +13,8 @@ structure template hardware/machine/one/base_not_so_small;
 
 "ram" = list(create("hardware/ram/generic", "size", 4*GB));
 
-"cards/nic" = dict("eth0", create("hardware/nic/bnx2"), "eth1", create("hardware/nic/bnx2"),);
+"cards/nic" = dict("eth0", create("hardware/nic/by_driver/bnx2"),
+                   "eth1", create("hardware/nic/by_driver/bnx2"),
+                  );
 
 "cards/nic/eth0/boot" = true;

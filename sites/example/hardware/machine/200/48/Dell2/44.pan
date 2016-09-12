@@ -16,8 +16,8 @@ structure template hardware/machine/200/48/Dell2/44;
 
 "ram" = list(create("hardware/ram/generic", "size", 262144*MB));
 
-"cards/nic" = nlist("eth0",create("hardware/nic/bnx2x"),
-                    "eth1",create("hardware/nic/bnx2x"));
+"cards/nic" = nlist("eth0",create("hardware/nic/by_driver/bnx2x"),
+                    "eth1",create("hardware/nic/by_driver/bnx2x"));
 
 "cards/nic/eth0/hwaddr" = "00:15:C5:EB:5D:A1";
 "cards/nic/eth1/hwaddr" = "00:15:C5:EB:5D:A2";

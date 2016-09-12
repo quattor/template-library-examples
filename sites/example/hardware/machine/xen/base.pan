@@ -17,7 +17,7 @@ structure template hardware/machine/xen/base;
 
 "ram" = list(create("hardware/ram/generic", "size", 256*MB));
 
-"cards/nic" = nlist("eth0",create("hardware/nic/xen_vif"));
+"cards/nic" = nlist("eth0",create("hardware/nic/by_driver/xen-netfront"));
 
 "cards/nic/eth0/hwaddr"              = undef;
 

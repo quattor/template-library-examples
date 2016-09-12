@@ -16,8 +16,8 @@ structure template hardware/machine/200/49/Hp1/32;
 
 "ram" = list(create("hardware/ram/generic", "size", 4096*MB));
 
-"cards/nic" = nlist("eth0",create("hardware/nic/tg3"),
-                    "eth1",create("hardware/nic/tg3"));
+"cards/nic" = nlist("eth0",create("hardware/nic/by_driver/tg3"),
+                    "eth1",create("hardware/nic/by_driver/tg3"));
 
 "cards/nic/eth1/hwaddr" = "00:00:1A:1A:3B:DB"; #me NIC2
 "cards/nic/eth0/hwaddr" = "00:00:1A:1A:3B:DA"; #me NIC1

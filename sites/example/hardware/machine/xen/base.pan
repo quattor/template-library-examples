@@ -13,11 +13,11 @@ structure template hardware/machine/xen/base;
 
 "cpu" = list(create("hardware/cpu/xen_vcpu"));
 
-"harddisks" = nlist("xvda", create("hardware/harddisk/scsi","capacity", 20*GB));
+"harddisks" = dict("xvda", create("hardware/harddisk/scsi", "capacity", 20 * GB));
 
-"ram" = list(create("hardware/ram/generic", "size", 256*MB));
+"ram" = list(create("hardware/ram/generic", "size", 256 * MB));
 
-"cards/nic" = nlist("eth0",create("hardware/nic/by_driver/xen-netfront"));
+"cards/nic" = dict("eth0", create("hardware/nic/by_driver/xen-netfront"));
 
 "cards/nic/eth0/hwaddr"              = undef;
 

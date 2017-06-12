@@ -6,7 +6,7 @@ unique template site/os/version_db;
 # can be either machine names or OS major versions (e.g. 'el7') that are used as
 # default when there is no node specific entries.
 # This variable can also be defined in a machine profile or at the cluster
-# level to override the distribution used for a specific machine or cluster, 
+# level to override the distribution used for a specific machine or cluster,
 # for example using (OBJECT refers to the current machine):
 #      variable YUM_OS_DISTRIBUTION ?= dict(OBJECT, 'centos7');
 # Be sure not define entries for the corresponding machines in the
@@ -46,6 +46,3 @@ variable OS_VERSION = dict(
     '{nagios-slave-A.example.org}', 'el7x-x86_64',
     '{nagios-slave-B.example.org}', 'el7x-x86_64',
 );
-
-
-

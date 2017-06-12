@@ -8,7 +8,7 @@ variable CEPH_DEPLOY_VERSION ?= {
     };
 };
 
-'/software/packages' = { 
-    pkg_repl("ceph-deploy",format("%s-*",CEPH_DEPLOY_VERSION),'noarch');
+'/software/packages' = {
+    pkg_repl("ceph-deploy", format("%s-*", CEPH_DEPLOY_VERSION), 'noarch');
 };
 

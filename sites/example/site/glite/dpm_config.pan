@@ -61,6 +61,3 @@ variable DPM_SERVICE_PARAMS = dict(
         "requestMaxAge", '90d',
     ),
 );
-
-
-

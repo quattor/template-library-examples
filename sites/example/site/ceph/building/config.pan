@@ -7,8 +7,8 @@ variable IS_CEPH_DEPLOYHOST = { match(DEPLOY_FQDNS[0], value('/system/network/ho
 include 'components/ceph/config';
 
 variable CEPH_OSD_LIST ?= 'site/ceph/osdlocal/simple';
-include {CEPH_OSD_LIST } ; 
+include CEPH_OSD_LIST;
 
 variable CEPH_OSD_SCHEMA = 'osd-fetch';
 
-include { if (IS_CEPH_DEPLOYHOST) { 'site/ceph/basic/cluster' }};
+include if (IS_CEPH_DEPLOYHOST) { 'site/ceph/basic/cluster' };

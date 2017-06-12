@@ -16,6 +16,7 @@ include 'machine-types/example/se_dpm';
 
 # Tune MySQL parameters (recommended)
 include 'components/mysql/config';
+
 '/software/components/mysql/servers' = {
     SELF[FULL_HOSTNAME]['options'] = dict(
         'innodb_buffer_pool_size', '2048M',
@@ -24,7 +25,7 @@ include 'components/mysql/config';
     SELF;
 };
 
-# 
+#
 # software repositories
 #
 include PKG_REPOSITORY_CONFIG;

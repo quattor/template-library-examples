@@ -15,7 +15,7 @@ variable OS_FLAVOUR_ENABLED ?= true;
 
 # YUM Repository snapshots
 variable YUM_SNAPSHOT_DATE ?= '20140304';
-variable AII_OSINSTALL_ROOT = '/yum/snapshots/' + YUM_SNAPSHOT_DATE;
+variable AII_OSINSTALL_ROOT = format('/yum/snapshots/%s', YUM_SNAPSHOT_DATE);
 
 # Set to true to enable MPI support
 variable ENABLE_MPI ?= false;

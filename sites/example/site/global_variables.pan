@@ -29,8 +29,8 @@ final variable NAMESERVERS = list("134.158.120.3");
 # information is taken from the DB_IP "database". The
 # full hostname is the key for that nlist.
 variable NETWORK_PARAMS = nlist("ip",DB_IP[escape(FULL_HOSTNAME)],
-                                       "gateway","134.158.88.1",
-                                       "broadcast","134.158.95.255",
+                                       "gateway","192.168.0.254",
+                                       "broadcast","192.168.0.255",
                                        "netmask","255.255.248.0");
 
 

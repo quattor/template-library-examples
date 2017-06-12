@@ -6,6 +6,10 @@ include 'site/one/variables';
 
 include 'common/opennebula/one_auth';
 include 'common/opennebula/mysql';
+include 'components/chkconfig/config';
+include 'components/dirperm/config';
+include 'components/download/config';
+include 'components/metaconfig/config';
 include 'components/opennebula/config';
 include 'site/one/resources';
 
@@ -22,7 +26,7 @@ prefix "/software/components/opennebula/oned";
 "onegate_endpoint" = format("http://%s:5030", FULL_HOSTNAME);
 
 #  vnet common templates
-prefix '/software/components/opennebula/vnets/0/';
+prefix '/software/components/opennebula/vnets/0';
 "name" = DEFAULT_DOMAIN;
 "bridge" = "bridge1";
 "gateway" = DEFAULT_GATEWAY;
@@ -34,10 +38,10 @@ variable OPENNEBULA_HYP_PREFIX ?= "hyp";
 prefix "/software/components/opennebula";
 "hosts" = {
     # add all hostnames starting with hyp
-    t=list();
-    foreach (k;v;DB_IP) {
+    t = list();
+    foreach (k; v; DB_IP) {
         if(match(k, format('^%s\d+', OPENNEBULA_HYP_PREFIX))) {
-            append(t,k);
+            append(t, k);
         };
     };
     t;
@@ -69,8 +73,8 @@ prefix "/software/components/opennebula/rpc";
 
 include 'common/download/service';
 prefix "/software/components/download/files";
-"{/var/lib/one/.ssh/id_dsa}" = create("common/download/auth", 
-    "href", "secure/privkey/id_dsa", 
+"{/var/lib/one/.ssh/id_dsa}" = create("common/download/auth",
+    "href", "secure/privkey/id_dsa",
     "group", "oneadmin",
     "owner", "oneadmin",
     "perm", "0600",
@@ -84,18 +88,19 @@ prefix "/software/components/download/files";
 );
 
 prefix "/software/components/chkconfig/service";
-"opennebula" = dict("on", "","startstop", true);
-"opennebula-econe" = dict("on", "","startstop", true);
-"opennebula-gate" = dict("on", "","startstop", true);
-"opennebula-novnc" = dict("on", "","startstop", true);
-"opennebula-occi" = dict("on", "","startstop", true);
-"opennebula-sunstone" = dict("on", "","startstop", true);
+"opennebula" = dict("on", "", "startstop", true);
+"opennebula-econe" = dict("on", "", "startstop", true);
+"opennebula-gate" = dict("on", "", "startstop", true);
+"opennebula-novnc" = dict("on", "", "startstop", true);
+"opennebula-occi" = dict("on", "", "startstop", true);
+"opennebula-sunstone" = dict("on", "", "startstop", true);
 
-prefix "/software/packages";
-"{opennebula-server}"=dict();
-"{opennebula-sunstone}"=dict();
-"{opennebula-gate}"=dict();
-"{opennebula-flow}"=dict();
+"/software/packages" = {
+    pkg_repl("opennebula-server");
+    pkg_repl("opennebula-sunstone");
+    pkg_repl("opennebula-gate");
+    pkg_repl("opennebula-flow");
+};
 
 include 'site/one/rubygems';
 
@@ -107,14 +112,12 @@ bind "/software/components/metaconfig/services/{/var/lib/one/.ssh/config}/conten
 prefix "/software/components/metaconfig/services/{/var/lib/one/.ssh/config}";
 "module" = "ssh/client";
 "owner" = "oneadmin";
-"group"= "oneadmin";
+"group" = "oneadmin";
 
 prefix "/software/components/metaconfig/services/{/var/lib/one/.ssh/config}/contents";
 
-"Host" =  append(
-            dict(
-                "hostnames", list("*"),
-                "ControlMaster", "auto",
-                "ControlPath", "~/.ssh/%r@%h:%p",
-                )
-       );
+"Host" = append(SELF, dict(
+    "hostnames", list("*"),
+    "ControlMaster", "auto",
+    "ControlPath", "~/.ssh/%r@%h:%p",
+));

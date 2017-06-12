@@ -1,7 +1,7 @@
 unique template common/opennebula/node;
 
+include 'components/filecopy/config';
 include 'components/opennebula/sudo';
-include 'components/useraccess/config';
 
 prefix "/software/packages";
 "{opennebula-node-kvm}" = dict();
@@ -11,10 +11,15 @@ prefix "/software/packages";
 '/software/components/filecopy/services' = {
     if (is_defined(CEPH_LIBVIRT_UUID)) {
         SELF[escape("/var/lib/one/templates/secret/secret_ceph.xml")] = dict(
-            'config',format("<secret ephemeral='no' private='no'><uuid>%s</uuid><usage type='ceph'><name>%s secret</name></usage></secret>",
-                CEPH_LIBVIRT_UUID, "client.libvirt"),
-            'owner','oneadmin:oneadmin',
-            'perms', '0600');
-   };
-   SELF;
+            'config', join("", list(
+                "<secret ephemeral='no' private='no'>",
+                format("<uuid>%s</uuid>", CEPH_LIBVIRT_UUID),
+                format("<usage type='ceph'><name>%s secret</name></usage>", "client.libvirt"),
+                "</secret>",
+            )),
+            'owner', 'oneadmin:oneadmin',
+            'perms', '0600',
+        );
+    };
+    SELF;
 };

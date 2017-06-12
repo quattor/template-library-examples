@@ -18,9 +18,10 @@ variable YUM_SITE_SNAPSHOT_NS ?= YUM_SNAPSHOT_NS;
 variable SITE_REPOSITORY_LIST ?= list();
 variable SITE_REPOSITORY_CONFIG ?= dict();
 variable DEBUG = debug(
-    'OS_REPOSITORY_LIST = ' + to_string(OS_REPOSITORY_LIST) + "\n" +
-    'SITE_REPOSITORY_LIST = ' + to_string(SITE_REPOSITORY_LIST) + "\n" +
-    'SITE_REPOSITORY_CONFIG = ' + to_string(SITE_REPOSITORY_CONFIG) + "\n"
+    "OS_REPOSITORY_LIST = %s\nSITE_REPOSITORY_LIST = %s\nSITE_REPOSITORY_CONFIG = %s",
+    OS_REPOSITORY_LIST,
+    SITE_REPOSITORY_LIST,
+    SITE_REPOSITORY_CONFIG,
 );
 include 'quattor/functions/repository';
 '/software/repositories' = add_repositories(SITE_REPOSITORY_LIST);

@@ -27,7 +27,7 @@ include 'components/network/config';
     SELF[MGMT_INTERFACE] = dict(
         'device', MGMT_INTERFACE,
         'bootproto', 'dhcp',
-        'onboot', 'yes',
+        'onboot', true,
         'type', 'Ethernet',
     );
 
@@ -37,7 +37,7 @@ include 'components/network/config';
         'bootproto', 'static',
         'ip', '10.0.0.2',
         'netmask', '255.255.255.0',
-        'onboot', 'yes',
+        'onboot', true,
     );
 
     SELF[DATA_INTERFACE] = dict(
@@ -45,7 +45,7 @@ include 'components/network/config';
         'type', 'OVSPort',
         'bootproto', 'none',
         'ovs_bridge', DATA_BRIDGE,
-        'onboot', 'yes',
+        'onboot', true,
     );
 
     SELF;

@@ -1,11 +1,11 @@
 @maintainer{
-  name = Jerome Pansanel
-  email = jerome.pansanel@iphc.cnrs.fr
+name = Jerome Pansanel
+email = jerome.pansanel@iphc.cnrs.fr
 }
 
 @{
-  Example template that shows the configuration of an OpenStack Network 
-  node
+Example template that shows the configuration of an OpenStack Network
+node
 }
 
 object template network-node.example.org;
@@ -25,41 +25,41 @@ include 'machine-types/openstack/network_node';
 
 include 'components/network/config';
 
-'/system/network/interfaces/' = {
-  SELF[MGMT_INTERFACE] = dict(
-    'device',MGMT_INTERFACE,
-    'bootproto','dhcp',
-    'onboot', 'yes',
-    'type','Ethernet',
-  );
+'/system/network/interfaces' = {
+    SELF[MGMT_INTERFACE] = dict(
+        'device', MGMT_INTERFACE,
+        'bootproto', 'dhcp',
+        'onboot', 'yes',
+        'type', 'Ethernet',
+    );
 
-  SELF[PUBLIC_BRIDGE] = dict(
-    'device',DATA_BRIDGE,
-    'type','OVSBridge',
-    'bootproto','static',
-    'ip','192.168.10.32',
-    'netmask','255.255.255.0',
-    'onboot','yes',
-  );
+    SELF[PUBLIC_BRIDGE] = dict(
+        'device', DATA_BRIDGE,
+        'type', 'OVSBridge',
+        'bootproto', 'static',
+        'ip', '192.168.10.32',
+        'netmask', '255.255.255.0',
+        'onboot', 'yes',
+    );
 
-  SELF[PUBLIC_INTERFACE] = dict(
-    'device',PUBLIC_INTERFACE,
-    'type','OVSPort',
-    'bootproto','none',
-    'ovs_bridge',PUBLIC_BRIDGE,
-    'onboot','yes',
-  );
+    SELF[PUBLIC_INTERFACE] = dict(
+        'device', PUBLIC_INTERFACE,
+        'type', 'OVSPort',
+        'bootproto', 'none',
+        'ovs_bridge', PUBLIC_BRIDGE,
+        'onboot', 'yes',
+    );
 
-  SELF[DATA_BRIDGE] = dict(
-    'device',DATA_BRIDGE,
-    'type', 'OVSBridge',
-    'bootproto','static',
-    'ip','10.0.0.1',
-    'netmask','255.255.255.0',
-    'onboot','yes',
-  );
+    SELF[DATA_BRIDGE] = dict(
+        'device', DATA_BRIDGE,
+        'type', 'OVSBridge',
+        'bootproto', 'static',
+        'ip', '10.0.0.1',
+        'netmask', '255.255.255.0',
+        'onboot', 'yes',
+    );
 
-  SELF;
+    SELF;
 };
 
 #

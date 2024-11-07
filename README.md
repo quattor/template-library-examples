@@ -1,8 +1,6 @@
 template-library-examples
 =========================
 
-Template examples for configuring a real site
-
-Examples are based on Quattor version 14.2.1 or later (YUM-based deployment) and use
-generic OS templates (e.g. `sl6.x-x86_64`).
-
+This SCDB examples are mainly used for integration testing during the template library
+developments. They don't apply to Aquilon which is the recommended Quattor version for
+new users.

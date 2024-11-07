@@ -5,12 +5,15 @@
 
 unique template repository/config;
 
-include 'pan/functions';
+include'pan/functions';
 
-include'repository/snapshot/snapshot_variables';
+include 'repository/snapshot/snapshot_variables';
 
 # Repositories related to base OS and quattor client (should be first)
 include 'repository/config/os';
+
+# Quattor repositories
+include 'repository/config/quattor';
 
 # Local Repositories
 variable YUM_SITE_SNAPSHOT_NS ?= YUM_SNAPSHOT_NS;
@@ -18,13 +21,17 @@ variable SITE_REPOSITORY_LIST ?= list();
 variable SITE_REPOSITORY_CONFIG ?= dict();
 variable DEBUG = debug(
     'OS_REPOSITORY_LIST = ' + to_string(OS_REPOSITORY_LIST) + "\n" +
-    'QUATTOR_REPOSITORY_LIST = ' + to_string(QUATTOR_REPOSITORY_LIST) + "\n" +
     'SITE_REPOSITORY_LIST = ' + to_string(SITE_REPOSITORY_LIST) + "\n" +
     'SITE_REPOSITORY_CONFIG = ' + to_string(SITE_REPOSITORY_CONFIG) + "\n"
 );
 include 'quattor/functions/repository';
 '/software/repositories' = add_repositories(SITE_REPOSITORY_LIST);
 '/software/repositories' = repository_config(SITE_REPOSITORY_CONFIG);
+
+# Repositories related to grid middleware
+# Only if it can be found in the loadpath (else this is a machine not
+# running the grid middleware)
+include if_exists('repository/config/grid');
 
 # Repositories related to Nagios
 include if (is_defined(REPOSITORY_CONFIG_NAGIOS)) if_exists(REPOSITORY_CONFIG_NAGIOS);
@@ -34,5 +41,4 @@ include 'components/spma/config';
 '/software/components/spma/register_change' = append('/software/repositories');
 
 # Cleanup repository information
-include 'components/spma/config';
 include 'components/spma/repository_cleanup';

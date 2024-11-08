@@ -15,7 +15,7 @@ variable OS_FLAVOUR_ENABLED ?= true;
 
 # YUM Repository snapshots
 variable YUM_SNAPSHOT_DATE ?= '20140304';
-variable AII_OSINSTALL_ROOT = '/yum/snapshots/'+YUM_SNAPSHOT_DATE;
+variable AII_OSINSTALL_ROOT = '/yum/snapshots/' + YUM_SNAPSHOT_DATE;
 
 # Set to true to enable MPI support
 variable ENABLE_MPI ?= false;
@@ -41,6 +41,6 @@ variable PKG_REPOSITORY_CONFIG ?= 'repository/config';
 #
 # set root password on machines
 #
-include { 'components/accounts/config' };
+include 'components/accounts/config';
 "/software/components/accounts/rootpwd" ?= "$1$57qRuCXe$NPngMkg4BrLBf5hfJzJh21";
 "/software/components/accounts/shadowpwd" = true;

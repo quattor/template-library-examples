@@ -1,16 +1,18 @@
-unique template repository/config;
-
-include 'pan/functions';
-
 # NOTE: This template should be the LAST thing included in a
 # machine profile.  If you include packages after this template
 # then they will not be "resolved" and SPMA will not function
 # correctly.
 
+unique template repository/config;
+
+include'pan/functions';
+
+include 'repository/snapshot/snapshot_variables';
+
 # Repositories related to base OS and quattor client (should be first)
 include 'repository/config/os';
 
-# Quattor repository
+# Quattor repositories
 include 'repository/config/quattor';
 
 # Local Repositories
@@ -25,6 +27,11 @@ variable DEBUG = debug(
 include 'quattor/functions/repository';
 '/software/repositories' = add_repositories(SITE_REPOSITORY_LIST);
 '/software/repositories' = repository_config(SITE_REPOSITORY_CONFIG);
+
+# Repositories related to grid middleware
+# Only if it can be found in the loadpath (else this is a machine not
+# running the grid middleware)
+include if_exists('repository/config/grid');
 
 # Repositories related to Nagios
 include if (is_defined(REPOSITORY_CONFIG_NAGIOS)) if_exists(REPOSITORY_CONFIG_NAGIOS);

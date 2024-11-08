@@ -15,5 +15,3 @@ include 'machine-types/example/se_dpm';
 # software repositories
 #
 include PKG_REPOSITORY_CONFIG;
-
- 

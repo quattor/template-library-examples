@@ -19,8 +19,8 @@ include 'pan/functions';
 final variable DEFAULT_DOMAIN = "example.org";
 
 final variable HOSTNAME = hostname_from_object();
-final variable DOMAIN = domain_from_object(DEFAULT_DOMAIN);
-final variable FULL_HOSTNAME = full_hostname_from_object(DEFAULT_DOMAIN);
+final variable DOMAIN = domain_from_object();
+final variable FULL_HOSTNAME = OBJECT;
 
 # Define the nameservers to use for the site.
 final variable NAMESERVERS = list("134.158.120.3");

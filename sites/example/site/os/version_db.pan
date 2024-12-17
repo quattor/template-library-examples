@@ -30,7 +30,7 @@ variable OS_VERSION = dict(
     '{apel.example.org}', 'el7x-x86_64',
     '{argus.example.org}', 'el7x-x86_64',
     '{bdii.example.org}', 'el7x-x86_64',
-    '{px.example.org.tpl.disabled}', 'el7x-x86_64',
+    '{px.example.org}', 'el7x-x86_64',
     '{se-dpm-disk2.example.org}', 'el7x-x86_64',
     '{se-dpm-disk.example.org}', 'el7x-x86_64',
     '{se-dpm-server.example.org}', 'el7x-x86_64',

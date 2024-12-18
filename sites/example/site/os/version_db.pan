@@ -14,7 +14,9 @@ unique template site/os/version_db;
 
 variable YUM_OS_DISTRIBUTION = {
     # Default per OS version
-    SELF['el7'] = 'centos71';
+    SELF['el9'] = 'al9';
+    SELF['el8'] = 'al8';
+    SELF['el7'] = 'centos7';
 
     # Explicit value per host name
     SELF['ui.example.org'] = 'centos7';
@@ -24,22 +26,25 @@ variable YUM_OS_DISTRIBUTION = {
 
 
 variable OS_VERSION = dict(
-    escape("cream.example.org"), "el7x-x86_64",
-    escape("dcache-head.example.org"), "el7x-i386",
-    escape("dcache-pool.example.org"), "el7x-i386",
-    escape("hydra.example.org"), "el7x-x86_64",
-    escape("lfc.example.org"), "el7x-x86_64",
-    escape("mon.example.org"), "el7x-x86_64",
-    escape("ui.example.org"), "el7x-x86_64",
-    escape("wmslb.example.org"), "el7x-x86_64",
-    escape("wn2.example.org"), "el7x-x86_64",
-    escape("xen-guest.example.org"), "el7x-x86_64",
-    escape("xen-host.example.org"), "el7x-x86_64",
+    # Grid cluster
+    '{apel.example.org}', 'el7x-x86_64',
+    '{argus.example.org}', 'el7x-x86_64',
+    '{bdii.example.org}', 'el7x-x86_64',
+    '{px.example.org}', 'el7x-x86_64',
+    '{se-dpm-disk2.example.org}', 'el7x-x86_64',
+    '{se-dpm-disk.example.org}', 'el7x-x86_64',
+    '{se-dpm-server.example.org}', 'el7x-x86_64',
+    '{topbdii.example.org}', 'el7x-x86_64',
+    '{ui.example.org}', 'el7x-x86_64',
+    '{wn2.example.org}', 'el7x-x86_64',
+    '{wn3.example.org}', 'el7x-x86_64',
+    '{wn.example.org}', 'el7x-x86_64',
 
-    escape("nagios-server.example.org"), "el7x-x86_64",
-    escape("nagios-master.example.org"), "el7x-x86_64",
-    escape("nagios-slave-A.example.org"), "el7x-x86_64",
-    escape("nagios-slave-B.example.org"), "el7x-x86_64",
+    # Misc cluster
+    '{nagios-server.example.org}', 'el7x-x86_64',
+    '{nagios-master.example.org}', 'el7x-x86_64',
+    '{nagios-slave-A.example.org}', 'el7x-x86_64',
+    '{nagios-slave-B.example.org}', 'el7x-x86_64',
 );
 
 

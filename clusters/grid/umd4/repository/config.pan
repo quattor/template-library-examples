@@ -7,7 +7,7 @@ unique template repository/config;
 
 include'pan/functions';
 
-include 'repository/snapshot/snapshot_variables';
+include 'repository/snapshot_variables';
 
 # Repositories related to base OS and quattor client (should be first)
 include 'repository/config/os';

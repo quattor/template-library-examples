@@ -23,16 +23,15 @@ variable OS_REPOSITORY_LIST = {
 };
 
 '/software/packages' = {
-    v=format("%s-*",CEPH_VERSION);
-    pkg_repl("ceph*",v,'x86_64');
-    pkg_repl("librbd1*",v,'x86_64');
-    pkg_repl("libradosstriper1*",v,'x86_64');
-    pkg_repl("librados2*",v,'x86_64');
-    pkg_repl("libcephfs1*",v,'x86_64');
-    pkg_repl("libcephfs_jni1*",v,'x86_64');
-    pkg_repl("python-ceph-compat*",v,'x86_64');
-    pkg_repl("python-cephfs*",v,'x86_64');
-    pkg_repl("python-rados*",v,'x86_64');
-    pkg_repl("python-rbd*",v,'x86_64');
+    v = format("%s-*", CEPH_VERSION);
+    pkg_repl("ceph*", v, 'x86_64');
+    pkg_repl("librbd1*", v, 'x86_64');
+    pkg_repl("libradosstriper1*", v, 'x86_64');
+    pkg_repl("librados2*", v, 'x86_64');
+    pkg_repl("libcephfs1*", v, 'x86_64');
+    pkg_repl("libcephfs_jni1*", v, 'x86_64');
+    pkg_repl("python-ceph-compat*", v, 'x86_64');
+    pkg_repl("python-cephfs*", v, 'x86_64');
+    pkg_repl("python-rados*", v, 'x86_64');
+    pkg_repl("python-rbd*", v, 'x86_64');
 };
-

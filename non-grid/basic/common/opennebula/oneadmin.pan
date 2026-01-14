@@ -9,7 +9,7 @@ prefix '/software/components/accounts';
 "users/oneadmin" = dict(
     "uid", 9869,
     "groups", list("oneadmin"),
-    "comment","oneadmin",
+    "comment", "oneadmin",
     "shell", "/bin/bash",
     "homeDir", "/var/lib/one",
     "createHome", true,

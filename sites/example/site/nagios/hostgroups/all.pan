@@ -3,6 +3,6 @@
 #
 structure template site/nagios/hostgroups/all;
 
-include { 'site/nagios/hostgroups/cluster-A' };
-include { 'site/nagios/hostgroups/cluster-B' };
+include 'site/nagios/hostgroups/cluster-A';
+include 'site/nagios/hostgroups/cluster-B';
 

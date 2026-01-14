@@ -1,12 +1,12 @@
 unique template site/dcache/sitename;
 
-## set this in the variable 
+## set this in the variable
 ## variable SEDCACHE_CONFIG_SITE = "dcache/sitename";
 
 ## name of the admin node
 variable SE_DCACHE = "dcache-head.example.org";
 
-## /pnfs/DCACHE_SERVER_ID 
+## /pnfs/DCACHE_SERVER_ID
 variable DCACHE_SERVER_ID = "example";
 
 ## namespace to look for DCACHE_SITE_NS + [dcache/pnfs, dcache/unit, dcache/pools, dcache/link and dcache/node_config]

@@ -1,6 +1,6 @@
 unique template vo/site/vos_base_gids;
 
-#ariable VOS_BASE_GID = nlist("vo.agata.org", 36000,
+#ariable VOS_BASE_GID = dict("vo.agata.org", 36000,
 #                             "alice", 1000,
 #                             "astro.vo.eu-egee.org", 37000,
 #                             "atlas", 2000,

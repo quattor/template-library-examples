@@ -8,7 +8,7 @@
 
 unique template site/aii-config;
 
-include { 'pan/functions' };
+include 'pan/functions';
 
 # Name of tftp server used by PXE installation
 variable AII_KS_SRV ?= "quattorsrv.example.org";

@@ -9,5 +9,5 @@ variable SEDPM_CONFIG_SITE = "site/glite/dpm_config";
 #variable GLITE_UPDATE_VERSION ?= '45-1';
 
 # Include base machine type
-include { 'machine-types/grid/se_dpm' };
+include 'machine-types/grid/se_dpm';
 

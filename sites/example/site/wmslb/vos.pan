@@ -1,6 +1,7 @@
 unique template site/wmslb/vos;
 
-variable VOS = list('dteam',
-                    'ops',
-                    );
-
+# panlint disable=LP011
+variable VOS = list(
+    'dteam',
+    'ops',
+);

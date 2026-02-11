@@ -15,37 +15,25 @@ unique template site/misc/fix_fqan_dirs;
 
 variable GLITE_BASE_CONFIG_SITE_SAVED ?= null;
 
-variable LAL_FIX_ACCOUNTS_SCRIPT = '/tmp/fix_homedirs';
-variable LAL_FIX_ACCOUNTS_CONTENTS = <<EOF;
-#!/bin/sh
+variable LAL_FIX_ACCOUNTS_SCRIPT = '/tmp/fix_fqan_dirs';
 
-users=$(diff -u /etc/passwd.181209 /etc/passwd|grep -E '^\+[a-z]'|awk -F: '{print $1}'|sed -e 's/\+//')
-
-for user in ${users}
-do
-  echo "Resetting perms on $user home dir..."
-  eval chown -R ${user} ~${user}
-done
-
-exit 0
-EOF
-
-include { 'components/filecopy/config' };
+include 'components/filecopy/config';
 '/software/components/filecopy/dependencies/pre' = push('accounts');
 '/software/components/filecopy/services' = {
-  if ( is_defined(NODE_VO_ACCOUNTS) && NODE_VO_ACCOUNTS ) {
-    debug('Adding purge_fqan_accounts');
-    SELF[escape(LAL_FIX_ACCOUNTS_SCRIPT)] =  nlist('config', LAL_FIX_ACCOUNTS_CONTENTS,
-                                                     'owner', 'root:root',
-                                                     'perms', '0755',
-                                                     'restart', LAL_FIX_ACCOUNTS_SCRIPT, 
-                                                    );
-  } else {
-    debug('VO accounts disabled (NODE_VO_ACCOUNTS='+to_string(NODE_VO_ACCOUNTS)+')');
-  };
-  SELF;
+    if ( is_defined(NODE_VO_ACCOUNTS) && NODE_VO_ACCOUNTS ) {
+        debug('Adding purge_fqan_accounts');
+        SELF[escape(LAL_FIX_ACCOUNTS_SCRIPT)] = dict(
+            'config', file_contents('site/misc/fix_fqan_dirs.sh'),
+            'owner', 'root:root',
+            'perms', '0755',
+            'restart', LAL_FIX_ACCOUNTS_SCRIPT,
+        );
+    } else {
+        debug('VO accounts disabled (NODE_VO_ACCOUNTS=%s', NODE_VO_ACCOUNTS);
+    };
+    SELF;
 };
 
 
 # Include original GLITE_BASE_CONFIG_SITE if any
-include { GLITE_BASE_CONFIG_SITE_SAVED };
+include GLITE_BASE_CONFIG_SITE_SAVED;

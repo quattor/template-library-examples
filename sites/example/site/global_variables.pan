@@ -27,7 +27,7 @@ final variable NAMESERVERS = list("134.158.120.3");
 
 # Define the network parameters for the site.  The IP
 # information is taken from the DB_IP "database". The
-# full hostname is the key for that nlist.
+# full hostname is the key for that dict.
 variable NETWORK_PARAMS = dict(
     "ip", DB_IP[escape(FULL_HOSTNAME)],
     "gateway", "192.168.0.254",
